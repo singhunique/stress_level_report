@@ -1,14 +1,14 @@
+# 3. EDA
+# Summary of numeric variables
+summary(data[, c("stress_level", "sleep_quality", "academic_performance")])
+# Frequency of categories
+table(data$bullying)
+table(data$family_issues)
+
+
 # Histogram of stress levels
 hist(data$stress_level, main="Distribution of Stress Levels", xlab="Stress Level")
 
-# Predict probabilities from logistic model
-pred <- predict(model_bully, type="response")
-
-# Plot actual vs predicted
-plot(data$bullying, pred,
-     main="Probability of High Stress by Bullying",
-     xlab="Bullying", ylab="Predicted Probability of High Stress",
-     col="blue", pch=19)
 
 # Scatterplot with regression line
 plot(data$sleep_quality, data$stress_level,
@@ -16,7 +16,7 @@ plot(data$sleep_quality, data$stress_level,
      xlab="Sleep Quality", ylab="Stress Level",
      pch=19, col="lightblue")
 
-abline(lm(stress_level ~ sleep_quality, data=data), col="red", lwd=2)
+
 
 library(corrplot)
 
