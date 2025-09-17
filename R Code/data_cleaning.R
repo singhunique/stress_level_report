@@ -1,8 +1,3 @@
-# Load necessary packages
-library(dplyr)
-library(corrplot)
-#set path
-setwd("C:/Users/singh/OneDrive/Documents")
 # 1.Data import 
 # Import CSV
 data <- read.csv("StressLevelDataset.csv", stringsAsFactors = FALSE)
@@ -34,8 +29,10 @@ boxplot(data$sleep_quality, main="Boxplot of Sleep Quality")
 data$mental_health_history <- as.factor(data$mental_health_history)
 data$bullying <- as.factor(data$bullying)
 data$social_support <- as.factor(data$social_support)
+
+
+
 # Check structure again
 str(data)
 summary(data)
 names(data)
-
